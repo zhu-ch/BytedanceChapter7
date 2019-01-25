@@ -139,6 +139,8 @@ public class CustomCameraActivity extends AppCompatActivity implements SurfaceHo
             CAMERA_TYPE = 1 - CAMERA_TYPE;//相互切换
             mCamera = getCamera(CAMERA_TYPE);
             try {
+                Camera.Parameters parameters = mCamera.getParameters();
+                mCamera.setParameters(parameters);
                 mCamera.setPreviewDisplay(surfaceHolder);
                 mCamera.startPreview();
             } catch (Exception e) {
